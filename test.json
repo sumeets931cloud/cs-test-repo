@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "appVersion": "dbc3a883-346c-11ef-ac80-3ef6d74f675c",
+  "description": "Data Pipeline Application",
+  "change": {
+    "author": "cdap",
+    "creationTimeMillis": 1719482762018,
+    "latest": true
+  },
+  "configuration": "{\"resources\":{\"memoryMB\":2048.0,\"virtualCores\":1.0},\"driverResources\":{\"memoryMB\":2048.0,\"virtualCores\":1.0},\"connections\":[],\"comments\":[],\"postActions\":[],\"properties\":{},\"processTimingEnabled\":true,\"stageLoggingEnabled\":false,\"stages\":[{\"name\":\"GCS Argument Setter\",\"plugin\":{\"name\":\"GCSArgumentSetter\",\"type\":\"action\",\"label\":\"GCS Argument Setter\",\"artifact\":{\"name\":\"google-cloud\",\"version\":\"0.23.1\",\"scope\":\"SYSTEM\"},\"properties\":{\"project\":\"auto-detect\",\"path\":\"gs://test_bucket\",\"serviceAccountType\":\"filePath\",\"serviceFilePath\":\"auto-detect\"}},\"outputSchema\":[{\"name\":\"etlSchemaBody\",\"schema\":\"\"}],\"id\":\"GCS-Argument-Setter\"}],\"schedule\":\"0 1 */1 * *\",\"engine\":\"spark\",\"numOfRecordsPreview\":100.0,\"rangeRecordsPreview\":{\"min\":1.0,\"max\":\"5000\"},\"maxConcurrentRuns\":1.0}",
+  "datasets": [],
+  "programs": [
+    {
+      "type": "Workflow",
+      "app": "test",
+      "name": "DataPipelineWorkflow",
+      "description": "Data Pipeline Workflow"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "GCS Argument Setter",
+      "name": "GCSArgumentSetter",
+      "type": "action"
+    }
+  ],
+  "artifact": {
+    "name": "cdap-data-pipeline",
+    "version": "6.10.1",
+    "scope": "SYSTEM"
+  }
+}
